@@ -1,0 +1,16 @@
+<mvc:View controllerName="ovly.hanadeveloper.tree.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:st="sap.ui.comp.smarttable">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<DatePicker id="date" change="onChangeDate" />
+						<st:SmartTable id="tree" tableType="TreeTable" enableAutoBinding="true" entitySet="Organizations" initiallyVisibleFields="Name,Type"
+						beforeRebindTable="onBeforeRebindTable"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

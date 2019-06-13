@@ -1,0 +1,131 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "ovly.hanadeveloper.tree",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZHD_C_TREE_CDS": {
+				"uri": "/sap/opu/odata/sap/ZHD_ORGANIZATION_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml",
+					"annotations": [
+						"annotation1"
+					]
+				}
+			},
+			"annotation1": {
+				"type": "ODataAnnotation",
+				"uri": "annotation1.xml",
+				"settings": {
+					"localUri": "annotation1.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "ovly.hanadeveloper.tree.view.View1",
+			"type": "XML",
+			"async": true,
+			"id": "View1"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ovly.hanadeveloper.tree.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZHD_C_TREE_CDS",
+				"preload": true
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "ovly.hanadeveloper.tree.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteView1",
+					"pattern": "RouteView1",
+					"target": [
+						"TargetView1"
+					]
+				}
+			],
+			"targets": {
+				"TargetView1": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "View1",
+					"viewName": "View1"
+				}
+			}
+		}
+	}
+}

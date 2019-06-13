@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZHD_ORGANIZATION_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Organization" sap:content-version="1">
+				<Key><PropertyRef Name="NodeId"/></Key><Property Name="NodeId" Type="Edm.Guid" Nullable="false" sap:hierarchy-node-for="NodeId" sap:unicode="false" sap:label="NODE_ID"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="TYPE" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Company" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HParentId" Type="Edm.Guid" Nullable="false" sap:hierarchy-parent-node-for="NodeId" sap:unicode="false"
+					sap:label="H_PARENT_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HIsCycle" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="H_IS_CYCLE" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HIsOrphan" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="H_IS_ORPHAN" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HLevel" Type="Edm.Int32" Nullable="false" sap:hierarchy-level-for="NodeId" sap:unicode="false" sap:label="H_LEVEL"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HParentRank" Type="Edm.Int64" Nullable="false" sap:unicode="false" sap:label="H_PARENT_RANK" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HRank" Type="Edm.Int64" Nullable="false" sap:unicode="false" sap:label="H_RANK" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="HTreeSize" Type="Edm.Int64" Nullable="false" sap:unicode="false" sap:label="H_TREE_SIZE" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HDrillState" Type="Edm.String" Nullable="false" MaxLength="9" sap:hierarchy-drill-state-for="NodeId" sap:unicode="false"
+					sap:label="H_DRILL_STATE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZHD_ORGANIZATION_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Organizations" EntityType="ZHD_ORGANIZATION_SRV.Organization" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link rel="self" href="https://dev.s4.ovly:80/sap/opu/odata/sap/ZHD_ORGANIZATION_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="https://dev.s4.ovly:80/sap/opu/odata/sap/ZHD_ORGANIZATION_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
